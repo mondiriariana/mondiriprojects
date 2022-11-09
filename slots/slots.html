@@ -1,0 +1,47 @@
+<! Doctype html> 
+<!--My name is Ariana Mondiri
+ The name of the field is slots.html
+This page is a slots game -->
+
+<html>
+<head>
+<title> Slot machine </title>
+<script src="http://compsciconcepts.com/random.js"></script>
+<script> 
+function Lottery(){
+		randImg = RandomOneOf([ "http://compsciconcepts.com/Images/lemon", "http://compsciconcepts.com/Images/melon", "http://compsciconcepts.com/Images/banana",
+		"http://compsciconcepts.com/Images/cherry"]);
+		pickImg.src = randImg + '.png';
+		rand2Img = RandomOneOf([ "http://compsciconcepts.com/Images/lemon", "http://compsciconcepts.com/Images/melon", "http://compsciconcepts.com/Images/banana",
+		"http://compsciconcepts.com/Images/cherry"]);
+		pick2Img.src = rand2Img + '.png';
+		rand3Img = RandomOneOf([ "http://compsciconcepts.com/Images/lemon", "http://compsciconcepts.com/Images/melon", "http://compsciconcepts.com/Images/banana",
+		"http://compsciconcepts.com/Images/cherry"]);
+		pick3Img.src = rand3Img + '.png';
+		
+	if (randImg == rand2Img && rand2Img == rand3Img) {
+		balance.innerHTML = Number(balance.innerHTML) + 13;
+		alert('You won! +12 additional credits ;)');
+	}
+	else{
+		balance.innerHTML = Number(balance.innerHTML) - 1 ;
+			if (balance.innerHTML < 0) {
+				alert('You do not have enough credits to play. Click \'ok\' to play again. Otherwise, exit the page')
+				balance.innerHTML = 20
+}
+}		
+}
+</script>
+</head>
+<body style = "text-align:center">
+<h1> Lucky Dave's Slot Machine </h1>
+<img id = 'pickImg' alt = 'randomImg' src = 'http://compsciconcepts.com/Images/lemon.png' width = '250'> 
+<img id = 'pick2Img' alt = 'random2Img' src = 'http://compsciconcepts.com/Images/banana.png' width = '250'> 
+<img id = 'pick3Img' alt = 'random3Img' src = 'http://compsciconcepts.com/Images/melon.png' width = '250'> 
+<p>
+<button onclick = 'Lottery();'> Click to spin </button> 
+<p>
+<p> Number: <span id = 'balance'>20</span>
+ 
+</body>
+</html> 
